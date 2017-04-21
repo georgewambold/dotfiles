@@ -3,6 +3,9 @@ echo "Loading ~/dotfiles/etc/.bashrc"
 echo "Logged in at $(hostname) as:"
 echo $USER | figlet |lolcat
 
+# Source aliases
+source ~/dotfiles/etc/.bash_aliases
+
 # Setup case insensitive autocomplete
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
@@ -58,10 +61,15 @@ git_prompt ()
   fi
 }
 
-# Autocomplete for git branches/commands
+# Autocomplete for git command aliases
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+__git_complete g __git_main
+__git_complete gc _git_checkout
+__git_complete gd _git_diff
+__git_complete gst _git_stash
+__git_complete gp _git_pull
 
 # Colors ls should use for folders, files, symlinks etc, see `man ls` and
 # search for LSCOLORS
@@ -76,77 +84,5 @@ export EDITOR="vi"
 # Set path to gsutil
 export PATH=${PATH}:$HOME/Library/gsutil
 
-
-################# ALIASES/CLI COMMANDS #################
-
-################# iLoan shortcuts #################
-export PATH="$PATH:$HOME/Desktop/iLoan/release"
+# Export monocool shit
 export PATH=~/Desktop/iLoan/guides/monocool:$PATH
-alias rolo="cd ~/Desktop/iLoan/rolodex"
-alias consumer="cd ~/Desktop/iLoan/consumer"
-alias folio="cd ~/Desktop/iLoan/folio"
-
-################# Folder shortcuts #################
-alias ds="cd /Users/georgewambold/Desktop"
-alias bashp="vim /Users/gwambold/.bash_profile"
-
-################# Command shortcuts #################
-alias e="sublime"
-alias v="vim"
-alias be="bundle exec"
-alias o='open'
-alias ..="cd .."
-alias lsa="ls -aF"
-alias ls='ls -FGh'
-alias sl="ls"
-alias cls="killall Terminal"
-alias rst="bash --login"
-
-################# Git Shortcuts #################
-alias g='git'
-__git_complete g __git_main
-alias gs='git status '
-alias sg='git status '
-alias gb='git branch '
-alias gl='git log '
-alias ga='git add '
-alias gc='git checkout '
-__git_complete gc _git_checkout
-alias gc-='gc -'
-alias gd='git diff'
-__git_complete gd _git_diff
-alias gst='git stash'
-__git_complete gst _git_stash
-alias gcm='git checkout master '
-alias gp='git pull '
-__git_complete gp _git_pull
-alias gmp='gcm; gp; gc -;'
-
-################# Convenience #################
-
-alias cwd="echo -n $(pwd) | pbcopy; echo \"Copied '$(pwd)' \""
-alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
-alias speed="speedtest_cli"
-
-treeFunction() {
-  tree -L $1 $2
-}
-
-alias tree=treeFunction
-
-################# RESTular #################
-
-alias rest="cd /Users/georgewambold/Desktop/George/RESTular"
-alias restsync="gsutil rsync -r -d -x '.git|.DS_Store|resources/.DS_Store' /Users/georgewambold/Desktop/George/personal_projects/RESTular gs://www.restular.com"
-
-################# Nine Months Before #################
-
-alias nine="cd /Users/georgewambold/Desktop/George/NineMonthsBefore"
-alias ninesync="gsutil rsync -r -d -x '.git|.DS_Store|resources/.DS_Store' /Users/georgewambold/Desktop/George/NineMonthsBefore gs://www.ninemonthsbefore.com"
-
-################# Pitch #################
-
-alias pitch="cd /Users/georgewambold/Desktop/George/pitch"
-alias pios="cd /Users/georgewambold/Desktop/George/pitch/pitch_ios"
-alias papp="cd /Users/georgewambold/Desktop/George/pitch/pitch_app"
-export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
