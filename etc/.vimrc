@@ -13,7 +13,10 @@ set autoindent
 noremap <A-Left> gT
 noremap <A-Right> gt
 
+
+" Nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 syntax on
 
