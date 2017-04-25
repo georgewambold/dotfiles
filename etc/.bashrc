@@ -21,6 +21,9 @@ test -d "$HOME/.rbenv/" && PATH="$HOME/.rbenv/bin:$PATH"
 
 # Path for brew
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+# Path for PostgreSQL
+test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgresql@9.5/bin:$PATH
+
 # Path for Heroku
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 
