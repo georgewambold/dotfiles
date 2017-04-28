@@ -18,7 +18,11 @@ noremap <A-Right> gt
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
-syntax on
+" Syntax Highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+syntax enable
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
