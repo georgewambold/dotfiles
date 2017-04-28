@@ -6,7 +6,7 @@ alias consumer="cd ~/Desktop/iLoan/consumer"
 alias folio="cd ~/Desktop/iLoan/folio"
 
 ################# Folder shortcuts #################
-alias ds="cd /Users/georgewambold/Desktop"
+alias ds="cd $HOME/Desktop"
 alias bashp="vim /Users/gwambold/.bash_profile"
 
 ################# Command shortcuts #################

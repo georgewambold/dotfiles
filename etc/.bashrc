@@ -4,7 +4,7 @@ echo "Logged in at $(hostname) as:"
 echo $USER | figlet |lolcat
 
 # Source aliases
-source ~/dotfiles/etc/.bash_aliases
+source ./.bash_aliases
 
 # Setup case insensitive autocomplete
 bind "set completion-ignore-case on"
@@ -21,6 +21,7 @@ test -d "$HOME/.rbenv/" && PATH="$HOME/.rbenv/bin:$PATH"
 
 # Path for brew
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+
 # Path for PostgreSQL
 test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgresql@9.5/bin:$PATH
 
@@ -28,7 +29,6 @@ test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgres
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 
 # Load git completions
-git_completion_script=../git/git-completion.bash
 test -d ../git/git-completion.bash && source ../git/git-completion.bash
 
 # A more colorful prompt
@@ -65,9 +65,6 @@ git_prompt ()
 }
 
 # Autocomplete for git command aliases
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
 __git_complete g __git_main
 __git_complete gc _git_checkout
 __git_complete gd _git_diff
@@ -75,14 +72,10 @@ __git_complete gst _git_stash
 __git_complete gp _git_pull
 
 # Colors ls should use for folders, files, symlinks etc, see `man ls` and
-# search for LSCOLORS
 export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
 
-# Force grep to always use the color option and show line numbers
-export GREP_OPTIONS='--color=always'
-
 # Set vim as the default in terminal editor
-export EDITOR="vi"
+export EDITOR="vim"
 
 # Set path to gsutil
 export PATH=${PATH}:$HOME/Library/gsutil
