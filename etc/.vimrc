@@ -1,10 +1,5 @@
-set nu
-set tabstop=2
-set shiftwidth=2
 set expandtab
 retab
-
-set backspace=2
 
 autocmd BufRead,BufNewFile   *.go set noexpandtab
 
@@ -43,4 +38,12 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
 
+" Always show the status line at the bottom of the page
+" http://vim.wikia.com/wiki/Displaying_status_line_always
 set laststatus=2
+
+" Highlights f/?{char} results
+set hls
+
+" Highlights f/?{char} matches as you type
+set incsearch
