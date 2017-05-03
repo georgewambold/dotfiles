@@ -47,3 +47,6 @@ set hls
 
 " Highlights f/?{char} matches as you type
 set incsearch
+
+" Treat all numbers as decimals (as opposed to octal, etc.)
+set nrformats=
