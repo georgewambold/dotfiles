@@ -29,7 +29,7 @@ test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgres
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 
 # Load git completions
-test -d ../git/git-completion.bash && source ../git/git-completion.bash
+test -e ../git/git-completion.bash && source ../git/git-completion.bash
 
 # A more colorful prompt
 # \[\e[0m\] resets the color to default color
