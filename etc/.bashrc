@@ -4,7 +4,7 @@ echo "Logged in at $(hostname) as:"
 echo $USER | figlet |lolcat
 
 # Source aliases
-source ./.bash_aliases
+source ~/dotfiles/etc/.bash_aliases
 
 # Setup case insensitive autocomplete
 bind "set completion-ignore-case on"
@@ -27,9 +27,6 @@ test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgres
 
 # Path for Heroku
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
-
-# Load git completions
-test -e ../git/git-completion.bash && source ../git/git-completion.bash
 
 # A more colorful prompt
 # \[\e[0m\] resets the color to default color
@@ -64,7 +61,10 @@ git_prompt ()
   fi
 }
 
-# Autocomplete for git command aliases
+# Load git completions
+test -e ~/dotfiles/git/git-completion.bash && source ~/dotfiles/git/git-completion.bash
+
+#Autocomplete for git command aliases
 __git_complete g __git_main
 __git_complete gc _git_checkout
 __git_complete gd _git_diff
