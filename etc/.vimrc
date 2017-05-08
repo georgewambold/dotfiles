@@ -38,6 +38,9 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
 
+" Settings below this line are the result of informed decisions, those above
+" were probably copy/pasted
+
 " Always show the status line at the bottom of the page
 " http://vim.wikia.com/wiki/Displaying_status_line_always
 set laststatus=2
@@ -50,3 +53,12 @@ set incsearch
 
 " Treat all numbers as decimals (as opposed to octal, etc.)
 set nrformats=
+
+" Setting tabs to equal 2 spaces
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
+
+" Set yank/put to use system clipboard (requires higher ViM than os x default)
+set clipboard=unnamed
