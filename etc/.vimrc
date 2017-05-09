@@ -58,7 +58,6 @@ set nrformats=
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set noexpandtab
 
 " Set yank/put to use system clipboard (requires higher ViM than os x default)
 set clipboard=unnamed
