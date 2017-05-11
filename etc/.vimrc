@@ -61,3 +61,6 @@ set shiftwidth=2
 
 " Set yank/put to use system clipboard (requires higher ViM than os x default)
 set clipboard=unnamed
+
+" Make VIM's ex command history longer than the default 20
+set history=300
