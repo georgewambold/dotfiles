@@ -70,3 +70,7 @@ set history=300
 
 " Set a $ as a delimiter to whats being changed by the change command
 set cpoptions+=$
+
+" Allows virtual editing eg. moving my cursor to spaces that aren't
+" characters, etc.
+set virtualedit=all
