@@ -67,3 +67,6 @@ imap jj <esc>
 
 " Make VIM's ex command history longer than the default 20
 set history=300
+
+" Set a $ as a delimiter to whats being changed by the change command
+set cpoptions+=$
