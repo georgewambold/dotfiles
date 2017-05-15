@@ -61,3 +61,5 @@ set shiftwidth=2
 
 " Set yank/put to use system clipboard (requires higher ViM than os x default)
 set clipboard=unnamed
+
+imap jj <esc>
