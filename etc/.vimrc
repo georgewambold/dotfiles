@@ -62,4 +62,8 @@ set shiftwidth=2
 " Set yank/put to use system clipboard (requires higher ViM than os x default)
 set clipboard=unnamed
 
+" Map jj to <esc> in insert mode
 imap jj <esc>
+
+" Make VIM's ex command history longer than the default 20
+set history=300
