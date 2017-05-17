@@ -20,6 +20,8 @@ alias ls='ls -FGh'
 alias sl="ls"
 alias cls="killall Terminal"
 alias rst="bash --login"
+################# Rails shortcuts #################
+alias reset_db='be rake db:terminate db:drop db:create db:migrate db:seed'
 
 ################# Git Shortcuts #################
 alias g='git'
