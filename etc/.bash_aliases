@@ -7,7 +7,7 @@ alias consumer="cd ~/Desktop/iLoan/consumer"
 alias folio="cd ~/Desktop/iLoan/folio"
 
 ################# Folder shortcuts #################
-alias ds="cd $HOME/Desktop"
+alias desk="cd $HOME/Desktop"
 alias bashp="vim /Users/gwambold/.bash_profile"
 
 ################# Command shortcuts #################
@@ -21,6 +21,7 @@ alias ls='ls -FGh'
 alias sl="ls"
 alias cls="killall Terminal"
 alias rst="bash --login"
+alias killscreen="screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
 ################# Rails shortcuts #################
 alias reset_db='be rake db:terminate db:drop db:create db:migrate db:seed'
 
