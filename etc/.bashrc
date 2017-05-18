@@ -1,5 +1,6 @@
 # Display on login
-echo "Loading ~/dotfiles/etc/.bashrc"
+echo "sourcing .bashrc from:"
+pwd
 echo "Logged in at $(hostname) as:"
 echo $USER | figlet |lolcat
 

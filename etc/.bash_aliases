@@ -1,5 +1,6 @@
 ################# ALIASES/CLI COMMANDS #################
-
+echo 'sourcing .bash_aliases from:'
+pwd
 ################# iLoan shortcuts #################
 alias rolo="cd ~/Desktop/iLoan/rolodex"
 alias consumer="cd ~/Desktop/iLoan/consumer"
@@ -28,7 +29,6 @@ alias g='git'
 alias gs='git status '
 alias sg='git status '
 alias gb='git branch '
-alias gl='git log '
 alias ga='git add '
 alias gc='git checkout '
 alias gc-='gc -'
@@ -37,6 +37,7 @@ alias gst='git stash'
 alias gcm='git checkout master '
 alias gp='git pull '
 alias gmp='gcm; gp; gc -;'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'  --abbrev-commit --date=relative"
 
 ################# Convenience #################
 
