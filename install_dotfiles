@@ -6,6 +6,7 @@ symlink_if_not_exists .bash_profile
 cd ..
 
 echo "Installing vim stuff..."
+brew install vim --with-override-system-vi
 mkdir -p .vim/autoload .vim/bundle
 
 curl -LSso .vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
