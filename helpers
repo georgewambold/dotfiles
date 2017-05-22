@@ -3,7 +3,7 @@ function symlink_if_not_exists () {
   if test -e ~/$1; then
     echo "$1 already symlinked. Skipping for now"
   else
-    ln -s "$(pwd)/etc/$1" ~
+    ln -s "$(pwd)/$1" ~
     echo "$1 symlinked to ~/$1"
   fi
 }

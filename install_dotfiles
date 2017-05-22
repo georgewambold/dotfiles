@@ -3,6 +3,7 @@ source helpers
 
 cd etc
 symlink_if_not_exists .bash_profile
+symlink_if_not_exists .gitconfig
 cd ..
 
 echo "Installing vim stuff..."
