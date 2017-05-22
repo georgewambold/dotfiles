@@ -1,0 +1,16 @@
+[core]
+  # Excludesfiles allows us to set a global list of things to ignore
+  excludesfile = ~/.gitignore_global
+	editor = vim
+[color]
+  status = auto
+  diff = auto
+[color "status"]
+  untracked = cyan
+  changed = green
+  added = yellow
+[user]
+	name = gaw1990
+	email = georgewambold@gmail.com
+[credential]
+	helper = osxkeychain

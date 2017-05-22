@@ -1,6 +1,5 @@
 # Display on login
-echo "sourcing .bashrc from:"
-pwd
+echo "sourcing .bashrc from: $(pwd)"
 echo "Logged in at $(hostname) as:"
 echo $USER | figlet |lolcat
 

@@ -1,3 +1,3 @@
-echo 'sourcing .bash_profile from:'
-pwd
+#!/bin/bash
+echo "sourcing .bash_profile from: $(pwd)"
 source ~/dotfiles/etc/.bashrc

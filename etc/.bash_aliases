@@ -1,6 +1,5 @@
 ################# ALIASES/CLI COMMANDS #################
-echo 'sourcing .bash_aliases from:'
-pwd
+echo "sourcing .bash_aliases from: $(pwd)"
 ################# iLoan shortcuts #################
 alias rolo="cd ~/Desktop/iLoan/rolodex"
 alias consumer="cd ~/Desktop/iLoan/consumer"
