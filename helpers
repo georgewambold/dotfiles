@@ -1,0 +1,19 @@
+#!/bin/bash
+function symlink_if_not_exists () {
+  if test -e ~/$1; then
+    echo "$1 already symlinked. Skipping for now"
+  else
+    ln -s "$(pwd)/etc/$1" ~
+    echo "$1 symlinked to ~/$1"
+  fi
+}
+
+
+function clone_if_not_exists () {
+  if test -e $2; then
+    echo "$1 already cloned at $2. Skipping for now"
+  else
+    git clone $1 $2
+    echo "$1 cloned to $2"
+  fi
+}
