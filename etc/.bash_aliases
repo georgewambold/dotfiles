@@ -36,7 +36,7 @@ alias gd='git diff'
 alias gst='git stash'
 alias gcm='git checkout master '
 alias gp='git pull '
-alias gmp='gcm; gp; gc -;'
+alias gpm='gcm; gp; gc -;'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'  --abbrev-commit --date=relative"
 
 ################# Convenience #################

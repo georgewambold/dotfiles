@@ -74,3 +74,17 @@ set cpoptions+=$
 " Allows virtual editing eg. moving my cursor to spaces that aren't
 " characters, etc.
 set virtualedit=all
+
+" changes the cursor shape/color
+" in the terminal depending on the mode
+" see http://code.google.com/p/iterm2/issues/detail?id=710&q=cursor
+if &term =~ "xterm\\|rxvt"
+  " use a | cursor in insert mode
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+
+  " use a rectangle cursor otherwise
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+  " reset cursor when vim exits
+  autocmd VimLeave * silent !echo -e -n "\x1b[\x34 q"
+endif
