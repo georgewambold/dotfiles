@@ -21,6 +21,7 @@ clone_if_not_exists https://github.com/bling/vim-airline vim-airline
 clone_if_not_exists https://github.com/kien/ctrlp.vim.git ctrlp.vim
 clone_if_not_exists https://github.com/tpope/vim-haml.git vim-haml
 clone_if_not_exists https://github.com/kchmck/vim-coffee-script.git coffee-script.git
+clone_if_not_exists https://github.com/ervandew/supertab.git supertab.git
 cd ../../
 
 if test -e ~/.vim; then
