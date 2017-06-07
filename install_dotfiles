@@ -16,6 +16,9 @@ cd ./.vim/bundle
 clone_if_not_exists git://github.com/tpope/vim-fugitive.git vim-fugitive.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
+# Colors
+clone_if_not_exists https://github.com/albertorestifo/github.vim.git github.vim
+
 clone_if_not_exists https://github.com/scrooloose/nerdtree.git nerdtree.git
 clone_if_not_exists https://github.com/bling/vim-airline vim-airline
 clone_if_not_exists https://github.com/kien/ctrlp.vim.git ctrlp.vim

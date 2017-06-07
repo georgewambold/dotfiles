@@ -1,3 +1,13 @@
+execute pathogen#infect()
+
+" Color scheme stuff
+set t_Co=256
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+colorscheme github
+
 set expandtab
 retab
 
@@ -29,8 +39,6 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
    call setpos('.', save_cursor)
    call setreg('/', old_query)
 endfunction
-
-execute pathogen#infect()
 
 " NERDTree setting defaults to work around http://github.com/scrooloose/nerdtree/issues/489
 let g:NERDTreeDirArrows = 1
