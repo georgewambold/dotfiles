@@ -12,7 +12,6 @@ let g:gruvbox_contrast_dark = 'hard'
 nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
 nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
 nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
-
 nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
 nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
 nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
@@ -27,6 +26,8 @@ set autoindent
 noremap <A-Left> gT
 noremap <A-Right> gt
 
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
 
 " Nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
@@ -41,12 +42,12 @@ syntax enable
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
- function! StripWhitespace ()
-   let save_cursor = getpos(".")
-   let old_query = getreg('/')
-   :%s/\s\+$//e
-   call setpos('.', save_cursor)
-   call setreg('/', old_query)
+function! StripWhitespace ()
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :%s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfunction
 
 " NERDTree setting defaults to work around http://github.com/scrooloose/nerdtree/issues/489

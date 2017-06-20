@@ -33,9 +33,11 @@ alias ga='git add '
 alias gc='git checkout '
 alias gc-='gc -'
 alias gd='git diff'
+alias dg='git diff'
 alias gst='git stash'
 alias gcm='git checkout master '
 alias gp='git pull '
+alias gf='git fetch'
 alias gpm='gcm; gp; gc -;'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'  --abbrev-commit --date=relative"
 
