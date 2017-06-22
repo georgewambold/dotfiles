@@ -59,6 +59,9 @@ let g:NERDTreeGlyphReadOnly = "RO"
 " Settings below this line are the result of informed decisions, those above
 " were probably copy/pasted
 
+" Show number lines
+set number
+
 " Always show the status line at the bottom of the page
 " http://vim.wikia.com/wiki/Displaying_status_line_always
 set laststatus=2
