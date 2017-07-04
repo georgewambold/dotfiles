@@ -1,10 +1,12 @@
 # Display on login
-echo "sourcing .bashrc from: $(pwd)"
 echo "Logged in at $(hostname) as:"
 echo $USER | figlet |lolcat
 
 # Source aliases
-source ~/dotfiles/etc/.bash_aliases
+
+bash_aliases_path=~/dotfiles/etc/.bash_aliases
+source $bash_aliases_path
+echo "sourcing .bash_aliases from: $bash_aliases_path"
 
 # Setup case insensitive autocomplete
 bind "set completion-ignore-case on"
