@@ -77,5 +77,10 @@ export EDITOR="vim"
 # Set path to gsutil
 export PATH=${PATH}:$HOME/Library/gsutil
 
+# Set path for node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Export monocool shit
 export PATH=~/Desktop/iLoan/guides/monocool:$PATH

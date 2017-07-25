@@ -45,7 +45,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 
 alias cwd="echo -n $(pwd) | pbcopy; echo \"Copied '$(pwd)' \""
 alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
-alias speed="speedtest_cli"
+alias speed="speedtest-cli"
 
 treeFunction() {
   tree -L $1 $2
