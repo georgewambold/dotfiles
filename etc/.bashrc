@@ -16,6 +16,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Path for RBENV
 test -d "$HOME/.rbenv/" && PATH="$HOME/.rbenv/bin:$PATH"
 
+# Export dir for java binary files/projects
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Path for brew
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
@@ -37,6 +40,9 @@ c_git_dirty='\[\e[0;31m\]'
 
 # PS1 is the variable for the prompt you see everytime you hit enter
 PROMPT_COMMAND=$PROMPT_COMMAND' PS1="${c_path}\W${c_reset}$(git_prompt) $ "'
+
+# Git author name
+export GIT_AUTHOR_NAME="George Wambold"
 
 # determines if the git branch you are on is clean or dirty
 git_prompt ()

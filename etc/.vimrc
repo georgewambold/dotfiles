@@ -109,3 +109,7 @@ if &term =~ "xterm\\|rxvt"
   " reset cursor when vim exits
   autocmd VimLeave * silent !echo -e -n "\x1b[\x34 q"
 endif
+
+set nofoldenable    " disable folding
+
+autocmd BufWritePre * %s/\s\+$//e

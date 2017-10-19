@@ -21,6 +21,7 @@ clone_if_not_exists https://github.com/albertorestifo/github.vim.git github.vim
 clone_if_not_exists https://github.com/morhetz/gruvbox.git gruvbox
 
 clone_if_not_exists https://github.com/scrooloose/nerdtree.git nerdtree.git
+clone_if_not_exists https://github.com/vim-utils/vim-ruby-fold vim-ruby-fold
 clone_if_not_exists https://github.com/bling/vim-airline vim-airline
 clone_if_not_exists https://github.com/vim-airline/vim-airline-themes vim-airline-themes
 clone_if_not_exists https://github.com/kien/ctrlp.vim.git ctrlp.vim
