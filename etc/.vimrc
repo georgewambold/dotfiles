@@ -113,3 +113,6 @@ endif
 set nofoldenable    " disable folding
 
 autocmd BufWritePre * %s/\s\+$//e
+
+" FZF to ctrl-p
+map <C-p> :FZF<CR>

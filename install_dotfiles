@@ -8,6 +8,7 @@ cd ..
 
 echo "Installing vim stuff..."
 brew install vim --with-override-system-vi
+brew upgrade vim
 mkdir -p .vim/autoload .vim/bundle
 
 curl -LSso .vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -24,10 +25,11 @@ clone_if_not_exists https://github.com/scrooloose/nerdtree.git nerdtree.git
 clone_if_not_exists https://github.com/vim-utils/vim-ruby-fold vim-ruby-fold
 clone_if_not_exists https://github.com/bling/vim-airline vim-airline
 clone_if_not_exists https://github.com/vim-airline/vim-airline-themes vim-airline-themes
-clone_if_not_exists https://github.com/kien/ctrlp.vim.git ctrlp.vim
 clone_if_not_exists https://github.com/tpope/vim-haml.git vim-haml
 clone_if_not_exists https://github.com/kchmck/vim-coffee-script.git coffee-script.git
 clone_if_not_exists https://github.com/ervandew/supertab.git supertab.git
+clone_if_not_exists https://github.com/junegunn/fzf fzf
+clone_if_not_exists https://github.com/junegunn/fzf.vim.git fzf.vim
 cd ../../
 
 if test -e ~/.vim; then
