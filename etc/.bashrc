@@ -8,6 +8,9 @@ bash_aliases_path=~/dotfiles/etc/.bash_aliases
 source $bash_aliases_path
 echo "sourcing .bash_aliases from: $bash_aliases_path"
 
+# Source .powconfig
+source ~/.powconfig
+
 # Setup case insensitive autocomplete
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"

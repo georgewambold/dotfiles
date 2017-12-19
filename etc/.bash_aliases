@@ -1,7 +1,8 @@
 ################# ALIASES/CLI COMMANDS #################
 ################# iLoan shortcuts #################
 alias rolo="cd ~/Desktop/iLoan/rolodex"
-alias consumer="cd ~/Desktop/iLoan/consumer"
+alias iloan="cd ~/Desktop/iLoan"
+alias int="cd ~/Desktop/iLoan/integration"
 alias folio="cd ~/Desktop/iLoan/folio"
 alias unfuck_rulebook="reset_db; be rake regions:all rules:all regenerate:csv; reset_db RAILS_ENV=test; be rake regions:all rules:all regenerate:csv RAILS_ENV=test;"
 
