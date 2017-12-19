@@ -6,6 +6,9 @@ echo $USER | figlet |lolcat
 # Source aliases
 source ~/dotfiles/etc/.bash_aliases
 
+# Source .powconfig
+source ~/.powconfig
+
 # Setup case insensitive autocomplete
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
