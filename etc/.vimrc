@@ -62,6 +62,17 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
 
+
+" indent whole file
+map <leader>= mmgg=G`m
+
+set backupdir=~/.tmp
+set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
+
+" mitigate holding shift for too long
+command! Q q " Bind :Q to :q
+command! Wq wq
+
 " ========================================================================================
 " Settings below this line are the result of informed decisions, those above
 " were probably copy/pasted
