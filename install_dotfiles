@@ -32,6 +32,7 @@ clone_if_not_exists https://github.com/junegunn/fzf.vim.git fzf.vim
 clone_if_not_exists https://github.com/airblade/vim-gitgutter vim-gitgutter
 clone_if_not_exists https://github.com/sheerun/vim-polyglot vim-polyglot
 clone_if_not_exists https://github.com/tpope/vim-endwise vim-endwise
+clone_if_not_exists https://github.com/thoughtbot/vim-rspec.git vim-rspec.git
 
 cd ../../
 

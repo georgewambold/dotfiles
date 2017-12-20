@@ -56,6 +56,13 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
 
+ " RSpec.vim mappings
+map <leader>f :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_runner = "os_x_iterm"
+
+" ========================================================================================
 " Settings below this line are the result of informed decisions, those above
 " were probably copy/pasted
 
