@@ -1,5 +1,9 @@
 execute pathogen#infect()
 
+
+" map leader
+let mapleader = "\<space>"
+
 " Color scheme stuff
 set t_Co=256
 if (has("termguicolors"))
@@ -23,9 +27,6 @@ autocmd BufRead,BufNewFile   *.go set noexpandtab
 
 set autoindent
 
-noremap <A-Left> gT
-noremap <A-Right> gt
-
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 
@@ -37,7 +38,12 @@ let NERDTreeShowHidden=1
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
-syntax enable
+
+" Syntax on, use old regexp engine for better performance
+syntax on
+set regexpengine=1
+set lazyredraw
+set ttyfast
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
@@ -62,7 +68,6 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
 
-
 " indent whole file
 map <leader>= mmgg=G`m
 
@@ -73,12 +78,21 @@ set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
 command! Q q " Bind :Q to :q
 command! Wq wq
 
+" Custom split hotkeys for FZF
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
 " ========================================================================================
 " Settings below this line are the result of informed decisions, those above
 " were probably copy/pasted
 
-" Show number lines
+" Show number on cursor line and relative numbers on other lines
+set relativenumber
 set number
+autocmd InsertEnter * :set number norelativenumber
+autocmd InsertLeave * :set relativenumber
 
 " Always show the status line at the bottom of the page
 " http://vim.wikia.com/wiki/Displaying_status_line_always
@@ -86,6 +100,9 @@ set laststatus=2
 
 " Highlights f/?{char} results
 set hls
+
+" clear highlights from last search
+map <leader>h :nohlsearch<cr>
 
 " Highlights f/?{char} matches as you type
 set incsearch
@@ -140,3 +157,14 @@ let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
+
+" search settings:
+" this ignores case unless you input an uppercase character into the search
+" bar
+set ignorecase
+set smartcase
+
+" split behavior
+set splitbelow
+set splitright
+
