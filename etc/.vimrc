@@ -71,6 +71,9 @@ let g:rspec_runner = "os_x_iterm"
 " indent whole file
 map <leader>= mmgg=G`m
 
+" add binding.pry on the following line
+map <leader>b Obinding.pry<ESC>j
+
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
 
