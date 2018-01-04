@@ -33,6 +33,9 @@ test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgres
 # Path for Heroku
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 
+# Path for qt5.5 and qmake
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+
 # A more colorful prompt
 # \[\e[0m\] resets the color to default color
 c_reset='\[\e[0m\]'
