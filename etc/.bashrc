@@ -18,17 +18,8 @@ bind "set show-all-if-ambiguous on"
 # Rbenv autocomplete and shims
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# Path for RBENV
-test -d "$HOME/.rbenv/" && PATH="$HOME/.rbenv/bin:$PATH"
-
 # Export dir for java binary files/projects
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-# Path for brew
-test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-
-# Path for PostgreSQL
-test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgresql@9.5/bin:$PATH
 
 # Path for Heroku
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
@@ -95,6 +86,3 @@ export PATH=${PATH}:$HOME/Library/gsutil
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Export monocool shit
-export PATH=~/Desktop/iLoan/guides/monocool:$PATH

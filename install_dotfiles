@@ -4,11 +4,9 @@ source helpers
 cd etc
 symlink_if_not_exists .bash_profile
 symlink_if_not_exists .gitconfig
+symlink_if_not_exists .tmux.conf
 cd ..
 
-echo "Installing vim stuff..."
-brew install vim --with-override-system-vi
-brew upgrade vim
 mkdir -p .vim/autoload .vim/bundle
 
 curl -LSso .vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
