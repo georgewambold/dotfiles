@@ -1,6 +1,5 @@
 execute pathogen#infect()
 
-
 " map leader
 let mapleader = "\<space>"
 
@@ -11,14 +10,9 @@ if (has("termguicolors"))
 endif
 
 colorscheme gruvbox
+
 " gruvbox stuff
 let g:gruvbox_contrast_dark = 'hard'
-nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
-nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
-nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
-nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
-nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
-nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 
 set expandtab
 retab
@@ -62,12 +56,15 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
 
- " RSpec.vim mappings
-map <leader>f :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" RSpec.vim mappings
+map <leader>f :w!<CR> :call RunCurrentSpecFile()<CR>
+map <Leader>s :w!<CR> :call RunNearestSpec()<CR>
+map <Leader>a :w!<CR> :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
 let g:rspec_command = "!bundle exec rspec {spec}"
+
+" run the current file with ruby
+map <leader>r :!ruby %<CR>
 
 " indent whole file
 map <leader>= mmgg=G`m
@@ -88,15 +85,18 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" Word motion settings
+let g:wordmotion_spaces = '_-.'
+
 " ========================================================================================
 " Settings below this line are the result of informed decisions, those above
 " were probably copy/pasted
 
-" Show number on cursor line and relative numbers on other lines
-set relativenumber
-set number
-autocmd InsertEnter * :set number norelativenumber
-autocmd InsertLeave * :set relativenumber
+" " Show number on cursor line and relative numbers on other lines
+" set relativenumber
+ set number
+" autocmd InsertEnter * :set number norelativenumber
+" autocmd InsertLeave * :set relativenumber
 
 " Always show the status line at the bottom of the page
 " http://vim.wikia.com/wiki/Displaying_status_line_always

@@ -38,7 +38,7 @@ alias gcm='git checkout master '
 alias gp='git pull '
 alias gf='git fetch'
 alias gpm='gcm; gp; gc -;'
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'  --abbrev-commit --date=relative"
+alias gl="git log"
 ################# Convenience #################
 alias cwd="echo -n $(pwd) | pbcopy; echo \"Copied '$(pwd)' \""
 alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
