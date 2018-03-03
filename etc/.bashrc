@@ -24,8 +24,6 @@ test -d "$HOME/.rbenv/" && PATH="$HOME/.rbenv/bin:$PATH"
 # Export dir for java binary files/projects
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# Path for brew
-test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
 # Path for PostgreSQL
 test -d /usr/local/opt/postgresql@9.5/bin && export PATH=/usr/local/opt/postgresql@9.5/bin:$PATH

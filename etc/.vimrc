@@ -67,6 +67,7 @@ map <leader>f :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
+let g:rspec_command = "!bundle exec rspec {spec}"
 
 " indent whole file
 map <leader>= mmgg=G`m
