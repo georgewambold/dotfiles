@@ -22,7 +22,9 @@ alias cls="killall Terminal"
 alias rst="bash --login"
 alias killscreen="screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
 ################# Rails shortcuts #################
-alias reset_db='be rake db:terminate db:drop db:create db:migrate db:seed'
+alias reset_db='be rake db:drop db:create db:migrate db:seed'
+################# Heroku Shortcuts #################
+alias h='heroku'
 ################# Git Shortcuts #################
 alias g='git'
 alias gs='git status '
@@ -39,6 +41,7 @@ alias gp='git pull '
 alias gf='git fetch'
 alias gpm='gcm; gp; gc -;'
 alias gl="git log"
+alias grs="git reset --soft head~1;git reset head ."
 ################# Convenience #################
 alias cwd="echo -n $(pwd) | pbcopy; echo \"Copied '$(pwd)' \""
 alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"

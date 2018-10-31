@@ -6,7 +6,7 @@ let mapleader = "\<space>"
 " Color scheme stuff
 set t_Co=256
 if (has("termguicolors"))
- set termguicolors
+  set termguicolors
 endif
 
 colorscheme gruvbox
@@ -66,6 +66,9 @@ let g:rspec_command = "!bundle exec rspec {spec}"
 " run the current file with ruby
 map <leader>r :!ruby %<CR>
 
+" run the current file with python
+map <leader>p :!python3 %<CR>
+
 " indent whole file
 map <leader>= mmgg=G`m
 
@@ -81,9 +84,9 @@ command! Wq wq
 
 " Custom split hotkeys for FZF
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit' }
 
 " Word motion settings
 let g:wordmotion_spaces = '_-.'
@@ -94,7 +97,7 @@ let g:wordmotion_spaces = '_-.'
 
 " " Show number on cursor line and relative numbers on other lines
 " set relativenumber
- set number
+set number
 " autocmd InsertEnter * :set number norelativenumber
 " autocmd InsertLeave * :set relativenumber
 
@@ -171,4 +174,16 @@ set smartcase
 " split behavior
 set splitbelow
 set splitright
+
+au BufNewFile,BufRead *.py
+      \ set tabstop=4 |
+      \ set softtabstop=4 |
+      \ set shiftwidth=4 |
+      \ set textwidth=79 |
+      \ set expandtab |
+      \ set autoindent |
+      \ set fileformat=unix |
+
+" You Complete Me Setting
+let g:ycm_server_python_interpreter='/usr/local/bin/python3'
 

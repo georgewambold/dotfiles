@@ -32,6 +32,7 @@ clone_if_not_exists https://github.com/sheerun/vim-polyglot vim-polyglot
 clone_if_not_exists https://github.com/tpope/vim-endwise vim-endwise
 clone_if_not_exists https://github.com/thoughtbot/vim-rspec.git vim-rspec.git
 clone_if_not_exists https://github.com/chaoren/vim-wordmotion.git vim-wordmotion.git
+clone_if_not_exists https://github.com/Valloric/YouCompleteMe.git YouCompleteMe.git
 
 cd ../../
 
