@@ -61,7 +61,15 @@ map <leader>f :w!<CR> :call RunCurrentSpecFile()<CR>
 map <Leader>s :w!<CR> :call RunNearestSpec()<CR>
 map <Leader>a :w!<CR> :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "!bundle exec rspec {spec}"
+
+" IF bin/rspec exists, use it ELSE use bundle exec rspec
+if executable("bin/rspec")
+  let b:rspec_executable = "!bin/rspec {spec}"
+else
+  let b:rspec_executable = "!bundle exec rspec {spec}"
+end
+
+let g:rspec_command = b:rspec_executable
 
 " run the current file with ruby
 map <leader>r :!ruby %<CR>
@@ -88,8 +96,6 @@ let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit' }
 
-" Word motion settings
-let g:wordmotion_spaces = '_-.'
 
 " ========================================================================================
 " Settings below this line are the result of informed decisions, those above
@@ -186,4 +192,7 @@ au BufNewFile,BufRead *.py
 
 " You Complete Me Setting
 let g:ycm_server_python_interpreter='/usr/local/bin/python3'
+
+" try to add .rb to strings checked by the gf command
+set suffixesadd+=.rb
 
