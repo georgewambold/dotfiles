@@ -1,4 +1,31 @@
-execute pathogen#infect()
+" execute pathogen#infect()
+
+" setup vundle
+set nocompatible " be iMproved, required
+filetype off     " required
+
+ " set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ervandew/supertab.git'
+Plugin 'junegunn/fzf'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-endwise'
+Plugin 'thoughtbot/vim-rspec.git'
+Plugin 'chaoren/vim-wordmotion.git'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'morhetz/gruvbox.git'
+Plugin 'tpope/vim-fugitive.git'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
 
 " map leader
 let mapleader = "\<space>"
