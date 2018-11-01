@@ -22,6 +22,7 @@ Plugin 'chaoren/vim-wordmotion.git'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'morhetz/gruvbox.git'
 Plugin 'tpope/vim-fugitive.git'
+Plugin 'janko-m/vim-test'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,9 +85,9 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
 
 " RSpec.vim mappings
-map <leader>f :w!<CR> :call RunCurrentSpecFile()<CR>
-map <Leader>s :w!<CR> :call RunNearestSpec()<CR>
-map <Leader>a :w!<CR> :call RunAllSpecs()<CR>
+map <leader>f :w!<CR> :TestFile<CR>
+map <Leader>s :w!<CR> :TestNearest<CR>
+map <Leader>a :w!<CR> :TestSuite<CR>
 let g:rspec_runner = "os_x_iterm"
 
 " IF bin/rspec exists, use it ELSE use bundle exec rspec
@@ -122,6 +123,10 @@ let g:fzf_action = {
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit' }
+
+" Change default fzf search commamnd to show hidden files and ignore
+" gitignored files
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 
 " ========================================================================================

@@ -12,6 +12,14 @@ git_autocomplete_path=~/dotfiles/git/git-completion.bash
 echo "sourcing git_auto_complete from: $git_autocomplete_path"
 source $git_autocomplete_path
 
+ # load + start compinit
+autoload -U compinit && compinit
+
+# automatic cd into directory
+setopt autocd
+
+# correct if completion is no possible
+zstyle ':completion:*' completer _complete _approximate
 
 # Source .powconfig
 source ~/.powconfig
