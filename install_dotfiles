@@ -5,7 +5,8 @@ cd etc
 symlink_if_not_exists .bash_profile
 symlink_if_not_exists .gitconfig
 symlink_if_not_exists .tmux.conf
-symlink_if_not_exists .vimrc 
+symlink_if_not_exists .vimrc
+symlink_if_not_exists .zshrc
 cd ..
 
 mkdir -p .vim/autoload .vim/bundle
