@@ -8,6 +8,11 @@ bash_aliases_path=~/dotfiles/etc/.bash_aliases
 source $bash_aliases_path
 echo "sourcing .bash_aliases from: $bash_aliases_path"
 
+git_autocomplete_path=~/dotfiles/git/git-completion.bash
+echo "sourcing git_auto_complete from: $git_autocomplete_path"
+source $git_autocomplete_path
+
+
 # Source .powconfig
 source ~/.powconfig
 
