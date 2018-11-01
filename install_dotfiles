@@ -7,15 +7,10 @@ symlink_if_not_exists .gitconfig
 symlink_if_not_exists .tmux.conf
 symlink_if_not_exists .vimrc
 symlink_if_not_exists .zshrc
+symlink_if_not_exists .vim
 cd ..
 
 mkdir -p .vim/autoload .vim/bundle
 
 vim +PluginInstall +qall
 
-if test -e ~/.vim; then
-  echo ".vim already symlinked. Skipping for now"
-else
-  ln -s "$(pwd)/.vim" ~
-  echo ".vim symlinked to ~/.vim"
-fi
