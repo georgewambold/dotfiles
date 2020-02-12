@@ -19,14 +19,13 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-endwise'
 Plugin 'thoughtbot/vim-rspec.git'
 Plugin 'chaoren/vim-wordmotion.git'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'morhetz/gruvbox.git'
 Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-abolish.git'
 Plugin 'janko-m/vim-test'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-
 
 " map leader
 let mapleader = "\<space>"
@@ -78,6 +77,53 @@ function! StripWhitespace ()
   call setreg('/', old_query)
 endfunction
 
+" Function to create services
+function! CreateService()
+  let name = input('Type new service name and press <enter>: ')
+  let snake_case_name = substitute(name,'::','/','g')
+  let snake_case_name = substitute(snake_case_name,'\(\u\+\)\(\u\l\)','\1_\2','g')
+  let snake_case_name = substitute(snake_case_name,'\(\l\|\d\)\(\u\)','\1_\2','g')
+  let snake_case_name = substitute(snake_case_name,'[.-]','_','g')
+  let snake_case_name = tolower(snake_case_name)
+
+  let camel_case_name = name
+  let filepath = "app/services/" . snake_case_name . ".rb"
+  let test_filepath = "spec/services/" . snake_case_name . "_spec.rb"
+
+  execute "!touch " . filepath
+  execute "!touch " . test_filepath
+
+  let service_text = [
+        \ 'class ' . camel_case_name,
+        \ '',
+        \ '  def self.call(params={})',
+        \ '    new(params).call',
+        \ '  end',
+        \ '',
+        \ '  def initialize(params)',
+        \ '  end',
+        \ '',
+        \ '  def call',
+        \ '  end',
+        \ '',
+        \ '  private',
+        \ 'end',
+        \]
+  let test_text = [
+        \ "require 'rails_helper'",
+        \ "",
+        \ "describe " . camel_case_name . " do",
+        \ "  it 'has a call method' do",
+        \ "    expect(" . camel_case_name . ").to respond_to(:call)",
+        \ "  end",
+        \ "end",
+        \]
+
+  silent! call writefile(service_text, glob(filepath), 'b')
+  silent! call writefile(test_text, glob(test_filepath), 'b')
+endfunction
+map <leader>c :call CreateService()<CR>
+
 " NERDTree setting defaults to work around http://github.com/scrooloose/nerdtree/issues/489
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -89,6 +135,7 @@ map <leader>f :w!<CR> :TestFile<CR>
 map <Leader>s :w!<CR> :TestNearest<CR>
 map <Leader>a :w!<CR> :TestSuite<CR>
 let g:rspec_runner = "os_x_iterm"
+let test#python#pytest#options = '-s'
 
 " IF bin/rspec exists, use it ELSE use bundle exec rspec
 if executable("bin/rspec")
@@ -109,7 +156,15 @@ map <leader>p :!python3 %<CR>
 map <leader>= mmgg=G`m
 
 " add binding.pry on the following line
-map <leader>b Obinding.pry<ESC>j
+map <leader>b :call AddDebugger()<CR>
+
+function! AddDebugger ()
+  if &filetype == 'python'
+    normal Oimport ipdb;ipdb.set_trace();
+  elseif &filetype == 'ruby'
+    normal Obinding.pry
+  endif
+endfunction
 
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
