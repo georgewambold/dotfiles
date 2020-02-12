@@ -1,10 +1,8 @@
 ################# ALIASES/CLI COMMANDS #################
-################# iLoan shortcuts #################
-alias rolo="cd ~/Desktop/iLoan/rolodex"
-alias iloan="cd ~/Desktop/iLoan"
-alias int="cd ~/Desktop/iLoan/integration"
-alias folio="cd ~/Desktop/iLoan/folio"
-alias unfuck_rulebook="reset_db; be rake regions:all rules:all regenerate:csv; reset_db RAILS_ENV=test; be rake regions:all rules:all regenerate:csv RAILS_ENV=test;"
+################# python aliases #################
+alias p3="ipython3"
+alias ip="ipython3"
+alias python="python3"
 
 ################# Folder shortcuts #################
 alias desk="cd $HOME/Desktop"
@@ -29,7 +27,7 @@ alias h='heroku'
 alias g='git'
 alias gs='git status '
 alias sg='git status '
-alias gb='git branch '
+alias gb='git branch --sort=-committerdate'
 alias ga='git add '
 alias gc='git checkout '
 alias gc-='gc -'
