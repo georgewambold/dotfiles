@@ -21,14 +21,8 @@ setopt autocd
 # correct if completion is no possible
 zstyle ':completion:*' completer _complete _approximate
 
-# Source .powconfig
-source ~/.powconfig
-
 # Rbenv autocomplete and shims
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Export dir for java binary files/projects
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Path for qt5.5 and qmake
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
@@ -73,4 +67,3 @@ export PATH=${PATH}:$HOME/Library/gsutil
 
 export PATH="/Users/georgewambold/.pyenv/bin:$PATH" #add pyenv to PATH
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
