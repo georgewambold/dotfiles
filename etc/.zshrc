@@ -70,3 +70,7 @@ export EDITOR="vim"
 
 # Set path to gsutil
 export PATH=${PATH}:$HOME/Library/gsutil
+
+export PATH="/Users/georgewambold/.pyenv/bin:$PATH" #add pyenv to PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

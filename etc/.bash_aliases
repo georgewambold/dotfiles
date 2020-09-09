@@ -1,8 +1,8 @@
 ################# ALIASES/CLI COMMANDS #################
 ################# python aliases #################
-alias p3="ipython3"
-alias ip="ipython3"
-alias python="python3"
+#alias p3="ipython3"
+#alias ip="ipython3"
+#alias python="python3"
 
 ################# Folder shortcuts #################
 alias desk="cd $HOME/Desktop"

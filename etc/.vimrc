@@ -147,7 +147,7 @@ end
 let g:rspec_command = b:rspec_executable
 
 " run the current file with ruby
-map <leader>r :!ruby %<CR>
+map <leader>r :w!<CR>:!ruby %<CR>
 
 " run the current file with python
 map <leader>p :!python3 %<CR>
@@ -222,7 +222,7 @@ set clipboard=unnamed
 imap jj <esc>
 
 " Make VIM's ex command history longer than the default 20
-set history=300
+set history=20
 
 " Set a $ as a delimiter to whats being changed by the change command
 set cpoptions+=$
