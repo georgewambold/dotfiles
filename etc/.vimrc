@@ -130,6 +130,12 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeGlyphReadOnly = "RO"
 
+" Easier split naviation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " RSpec.vim mappings
 map <leader>f :w!<CR> :TestFile<CR>
 map <Leader>s :w!<CR> :TestNearest<CR>
