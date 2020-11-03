@@ -34,7 +34,19 @@ alias gc-='gc -'
 alias gd='git diff'
 alias dg='git diff'
 alias gst='git stash'
-alias gcm='git checkout master '
+checkoutMaster() {
+  if [ 'git branch --list master' ]
+  then
+    git checkout master
+  elif [ 'git branch --list production' ]
+  then
+    git checkout production
+  elif [ 'git branch --list main' ]
+  then
+    git checkout main
+  fi
+}
+alias gcm=checkoutMaster
 alias gp='git pull '
 alias gf='git fetch'
 alias gpm='gcm; gp; gc -;'
