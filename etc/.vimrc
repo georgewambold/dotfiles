@@ -160,7 +160,7 @@ map <leader>b :call AddDebugger()<CR>
 
 function! AddDebugger ()
   if &filetype == 'python'
-    normal Oimport ipdb;ipdb.set_trace();
+    normal Oimport ipdb;ipdb.set_trace(context=15);
   elseif &filetype == 'ruby'
     normal Obinding.pry
   endif

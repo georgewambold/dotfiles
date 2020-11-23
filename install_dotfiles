@@ -10,10 +10,9 @@ symlink_if_not_exists .zshrc
 cd ..
 
 mkdir -p .vim/autoload .vim/bundle
-
 clone_if_not_exists https://github.com/VundleVim/Vundle.vim.git .vim/bundle/Vundle.vim
-
 symlink_if_not_exists .vim
 
 vim +PluginInstall +qall
 
+mkdir -p ~/.tmp
