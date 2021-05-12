@@ -50,14 +50,14 @@ treeFunction() {
   tree -L $1 $2
 }
 
+regenTags() {
+  if `gem list ripper-tags -i`
+  then
+    #do nothing
+  else
+    gem install ripper-tags
+  fi
+  ripper-tags -R --extra=q
+}
+
 alias tree=treeFunction
-################# RESTular #################
-alias rest="cd /Users/georgewambold/Desktop/George/RESTular"
-alias restsync="gsutil rsync -r -d -x '.git|.DS_Store|resources/.DS_Store' /Users/georgewambold/Desktop/George/personal_projects/RESTular gs://www.restular.com"
-################# Nine Months Before #################
-alias nine="cd /Users/georgewambold/Desktop/George/NineMonthsBefore"
-alias ninesync="gsutil rsync -r -d -x '.git|.DS_Store|resources/.DS_Store' /Users/georgewambold/Desktop/George/NineMonthsBefore gs://www.ninemonthsbefore.com"
-################# Pitch #################
-alias pitch="cd /Users/georgewambold/Desktop/George/pitch"
-alias pios="cd /Users/georgewambold/Desktop/George/pitch/pitch_ios"
-alias papp="cd /Users/georgewambold/Desktop/George/pitch/pitch_app"

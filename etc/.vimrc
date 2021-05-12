@@ -23,6 +23,7 @@ Plugin 'morhetz/gruvbox.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-abolish.git'
 Plugin 'janko-m/vim-test'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -189,6 +190,12 @@ let g:fzf_action = {
 " gitignored files
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
+" Use ag for ack.vim behind the scenes and in the command
+let g:ackprg = "ag --vimgrep --smart-case"
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 
 " ========================================================================================
 " Settings below this line are the result of informed decisions, those above
