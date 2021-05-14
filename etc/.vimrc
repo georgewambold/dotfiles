@@ -169,7 +169,7 @@ function! AddDebugger ()
   if &filetype == 'python'
     normal Oimport ipdb;ipdb.set_trace(context=15);
   elseif &filetype == 'ruby'
-    normal Obinding.pry
+    normal Otry;binding.pry;rescue;debugger;
   endif
 endfunction
 
