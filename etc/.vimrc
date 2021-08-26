@@ -197,6 +197,10 @@ cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 
+" Try to fix fzf tab issue
+let &t_TI = ""
+let &t_TE = ""
+
 " ========================================================================================
 " Settings below this line are the result of informed decisions, those above
 " were probably copy/pasted

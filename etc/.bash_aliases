@@ -10,6 +10,7 @@ alias bashp="vim /Users/gwambold/.bash_profile"
 ################# Command shortcuts #################
 alias e="sublime"
 alias v="vim"
+alias vom="vim"
 alias be="bundle exec"
 alias o='open'
 alias ..="cd .."
@@ -43,7 +44,7 @@ alias gl="git log"
 alias grs="git reset --soft head~1;git reset head ."
 ################# Convenience #################
 alias cwd="echo -n $(pwd) | pbcopy; echo \"Copied '$(pwd)' \""
-alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
+alias wifi="networksetup -setairportpower en1 off && networksetup -setairportpower en1 on"
 alias speed="speedtest-cli"
 
 treeFunction() {
