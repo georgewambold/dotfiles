@@ -144,12 +144,7 @@ map <Leader>a :w!<CR> :TestSuite<CR>
 let g:rspec_runner = "os_x_iterm"
 let test#python#pytest#options = '-s'
 
-" IF bin/rspec exists, use it ELSE use bundle exec rspec
-if executable("bin/rspec")
-  let b:rspec_executable = "!bin/rspec {spec}"
-else
-  let b:rspec_executable = "!bundle exec rspec {spec}"
-end
+let b:rspec_executable = "!bundle exec rspec {spec}"
 
 let g:rspec_command = b:rspec_executable
 
