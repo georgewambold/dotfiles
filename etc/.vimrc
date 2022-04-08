@@ -148,17 +148,25 @@ let b:rspec_executable = "!bundle exec rspec {spec}"
 
 let g:rspec_command = b:rspec_executable
 
-" run the current file with ruby
-map <leader>r :w!<CR>:!ruby %<CR>
-
-" run the current file with python
-map <leader>p :!python3 %<CR>
+" run the current file
+map <leader>r :call RunFile()<CR>
 
 " indent whole file
 map <leader>= mmgg=G`m
 
 " add binding.pry on the following line
 map <leader>b :call AddDebugger()<CR>
+
+function! RunFile ()
+  execute "w"
+  if &filetype == 'python'
+    execute "!clear;" .  "python3" . " " . expand("%")
+  elseif &filetype == 'ruby'
+    execute "!clear;" .  "ruby" . " " . expand("%")
+  elseif &filetype == 'julia'
+    execute "!clear;" .  "julia" . " " . expand("%")
+  endif
+endfunction
 
 function! AddDebugger ()
   if &filetype == 'python'
