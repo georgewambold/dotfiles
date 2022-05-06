@@ -12,6 +12,10 @@ git_autocomplete_path=~/dotfiles/git/git-completion.bash
 echo "sourcing git_auto_complete from: $git_autocomplete_path"
 source $git_autocomplete_path
 
+gitstatus_path=~/gitstatus/gitstatus.plugin.zsh
+echo "sourcing gitstatus_complete from: $gitstatus_path"
+source $gitstatus_path
+
  # load + start compinit
 autoload -U compinit && compinit
 
@@ -34,21 +38,21 @@ export GIT_AUTHOR_NAME="George Wambold"
 git_prompt ()
 {
   # Is this a git directory?
-  if ! git rev-parse --git-dir > /dev/null 2>&1; then
-    return 0
-  fi
-  # Grab working branch name
-  git_branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
-  # Clean or dirty branch
-  if git diff --quiet 2>/dev/null >&2; then
-    git_color="%F{green}"
-  else
-    git_color="%F{red}"
-  fi
-  if (( ${#git_branch} > 0 )); then
+  #
+  if gitstatus_query MY && [[ $VCS_STATUS_RESULT == ok-sync ]]; then
+
+    # Grab working branch name
+    git_branch=$VCS_STATUS_LOCAL_BRANCH
+    # Clean or dirty branch
+    if [ $VCS_STATUS_HAS_CONFLICTED == 1 -o $VCS_STATUS_HAS_UNSTAGED == 1 -o $VCS_STATUS_HAS_STAGED == 1 ]; then
+      git_color="%F{green}"
+    else
+      git_color="%F{red}"
+    fi
     echo "%f[$git_color$git_branch%f] "
   fi
 }
+gitstatus_stop 'MY' && gitstatus_start -s -1 -u -1 -c -1 -d -1 'MY'
 
 # prompt string is first subjected to parameter expansion, command substitution and arithmetic expansion.
 setopt PROMPT_SUBST
