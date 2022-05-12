@@ -9,6 +9,8 @@
   untracked = cyan
   changed = green
   added = yellow
+[push]
+  default = current
 [user]
 	name = George Wambold
 	email = georgewambold@gmail.com
