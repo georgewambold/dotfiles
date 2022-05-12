@@ -44,7 +44,7 @@ git_prompt ()
     # Grab working branch name
     git_branch=$VCS_STATUS_LOCAL_BRANCH
     # Clean or dirty branch
-    if ! [ $VCS_STATUS_HAS_CONFLICTED == 1 -o $VCS_STATUS_HAS_UNSTAGED == 1 -o $VCS_STATUS_HAS_STAGED == 1 ]; then
+    if ! [ $VCS_STATUS_HAS_CONFLICTED = 1 -o $VCS_STATUS_HAS_UNSTAGED = 1 -o $VCS_STATUS_HAS_STAGED = 1 ]; then
       git_color="%F{green}"
     else
       git_color="%F{red}"
