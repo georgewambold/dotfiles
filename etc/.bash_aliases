@@ -10,11 +10,10 @@ alias bashp="vim /Users/gwambold/.bash_profile"
 ################# Command shortcuts #################
 alias e="sublime"
 alias v="vim"
-alias vom="vim"
 alias be="bundle exec"
 alias o='open'
 alias ..="cd .."
-alias lsa="ls -aFl"
+alias lsa="ls -aF"
 alias ls='ls -FGh'
 alias sl="ls"
 alias cls="killall Terminal"
@@ -35,8 +34,19 @@ alias gc-='gc -'
 alias gd='git diff'
 alias dg='git diff'
 alias gst='git stash'
-alias gcm='git checkout master'
-alias gcp='git checkout production'
+checkoutMaster() {
+  if [ 'git branch --list master' ]
+  then
+    git checkout master
+  elif [ -n 'git branch --list production' ]
+  then
+    git checkout production
+  elif [ -n 'git branch --list main' ]
+  then
+    git checkout main
+  fi
+}
+alias gcm=checkoutMaster
 alias gp='git pull '
 alias gf='git fetch'
 alias gpm='gcm; gp; gc -;'
@@ -44,21 +54,17 @@ alias gl="git log"
 alias grs="git reset --soft head~1;git reset head ."
 ################# Convenience #################
 alias cwd="echo -n $(pwd) | pbcopy; echo \"Copied '$(pwd)' \""
-alias wifi="networksetup -setairportpower en1 off && networksetup -setairportpower en1 on"
+alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias speed="speedtest-cli"
 
 treeFunction() {
   tree -L $1 $2
 }
 
-regenTags() {
-  if `gem list ripper-tags -i`
-  then
-    #do nothing
-  else
-    gem install ripper-tags
-  fi
-  ripper-tags -R --extra=q
-}
-
 alias tree=treeFunction
+################# RESTular #################
+alias rest="cd /Users/georgewambold/Desktop/George/RESTular"
+alias restsync="gsutil rsync -r -d -x '.git|.DS_Store|resources/.DS_Store' /Users/georgewambold/Desktop/George/personal_projects/RESTular gs://www.restular.com"
+################# DCA ####################
+alias cdstat="cd /Users/georgewambold/Desktop/dev/data_and_stats.nosync/nascar_stats"
+alias cdmod="cd /Users/georgewambold/Desktop/dev/data_and_stats.nosync/nascar_modeling"
